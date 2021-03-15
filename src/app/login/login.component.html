@@ -1,0 +1,36 @@
+<div class="ui middle aligned center aligned grid login-container">
+    <div class="column">
+      <h2 class="ui image header">
+        <!-- <img src="assets/images/logo.png" class="image"> -->
+        <div class="content">
+          Log-in to your account
+        </div>
+      </h2>
+      <div class="ui form error error-container" *ngIf="error">
+        <div class="ui error message">
+          <div class="header">Error</div>
+          <p>{{ error }}</p>
+        </div>
+      </div>
+      <form class="ui large form" (keyup.enter)="login()">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </div>
+          </div>
+          <div class="ui fluid large primary submit button" (click)="login()">Login</div>
+        </div>
+  
+        <div class="ui error message"></div>
+  
+      </form>
+    </div>
+  </div>
